@@ -29,7 +29,7 @@ export default async (region, microStates) => {
         } 
     }
 
-    if (!microStates) {
+    if (microStates !== 'true') {
         await filterOutMicrostates(); 
     }
     

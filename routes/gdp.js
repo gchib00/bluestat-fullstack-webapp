@@ -6,13 +6,13 @@ import paramsValidator from '../helpers/middleware/paramsValidator.js';
 const router = express.Router();
 
 router.get('/:datatype/:region/:year', paramsValidator, async (req, res) => {
-    const { datatype, region, year } = req.params;
+    const { region, year } = req.params;
     const { microStates } = req.query;
     const relevantCountries = await get_countries(region, microStates);
     const dataPerCountry = [];
 
     for (const country of relevantCountries) {
-        const [ data ] = await pool.query(`SELECT * FROM pop_${datatype} WHERE country_id = ${country.id} AND year = ?`, [year]);
+        const [ data ] = await pool.query(`SELECT * FROM gdp_growth WHERE country_id = ${country.id} AND year = ?`, [year]);
         
         dataPerCountry.push({
             country: country.code,
