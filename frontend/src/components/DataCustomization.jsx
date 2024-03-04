@@ -39,7 +39,7 @@ export const DataCustomization = ({setActivateFetch, loader}) => {
   const selectedYear = searchParams.get("selectedYear") ?? "2019";
   const region = searchParams.get("region") ?? "EU";
   const isWideScreen = useMediaQuery({ query: "(min-width: 1333px)" });
-  const minYear=1990; const maxYear=2020;
+  const minYear=1990; const maxYear=2021;
 
   const availableYears = []; //arr for populating the "Select" element (because TextField type=number is incompatable with mobile)
   for(let i=minYear; i<=maxYear; i++) { //populate arr with available years

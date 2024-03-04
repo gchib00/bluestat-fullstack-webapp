@@ -75,7 +75,7 @@ export const InteractiveMapEurope = () => {
         return null;
       }
       return fetch (
-        `${apiUrl}/${endpoint}/${region}/${selectedYear}`
+        `${apiUrl}/${endpoint}/${region}/${selectedYear}?microStates=${microStates === '1'}`
       );
     };
     setLoader(true);
