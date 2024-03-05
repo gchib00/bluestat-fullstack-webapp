@@ -112,7 +112,7 @@ export const DataCustomization = ({setActivateFetch, loader}) => {
           size="large"
           sx={{height: "40px", width: "154px"}}
         >
-          { loader ? <CircularProgress size={"24px"} color="inherit" /> : "Render Data" }
+          { loader ? <CircularProgress size={"24px"} color="inherit" /> : "Render" }
         </Button>
         :
         <Button 
